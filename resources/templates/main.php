@@ -1,12 +1,7 @@
-
-
 <?php
 
 $this->insert('partials/header', ['title' => $title ]);
 
-?>
+echo $this->section('content');
 
-<?=$this->section('content')?>
-
-</body>
-</html>
+$this->insert('partials/footer');
