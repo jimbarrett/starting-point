@@ -9,13 +9,8 @@ require '../vendor/autoload.php';
 // define routes here
 $router = new App\Router();
 // public routes
-$router->get('/test', 'PagesController@test');
-
-// leave this alone until I decide what I want to do with protected routes.
-// $router->group('auth', [
-// 	'get' => ['/admin','PagesController@admin'],
-// 	'post' => ['/admin','PagesController@adminpost']
-// ]);
+$router->get('/login', 'UsersController@login');
+$router->post('/login', 'UsersController@doLogin');
 
 var_dump($router);
 

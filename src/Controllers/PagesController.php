@@ -4,6 +4,7 @@ namespace App\Controller;
 class PagesController extends Controller {
 
 	public function test() {
+		\App\Auth::seeit();
 		echo 'test successful';
 	}
 

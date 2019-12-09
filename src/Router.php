@@ -4,9 +4,6 @@ namespace App;
 class Router {
 
     private $routes = ['get' => [], 'post' => []];
-    // routes that require login.
-    // not sure how I'm going to do this yet.
-    private $auth = [];
     
     // add a GET route
     public function get($uri, $callback) {
@@ -16,16 +13,6 @@ class Router {
     // add a POST route
     public function post($uri, $callback) {
         $this->routes['post'][$uri] = $callback;
-    }
-
-    // add a group of routes
-    // this is obviously not working the way I want. 
-    // I may protect routes via main controller?
-    public function group($group,$group_routes) {
-    	foreach($group_routes as $k => $v) {
-    		$this->routes[$k][$v[0]] = $v[1];
-    		$this->auth[] = $k;
-    	}
     }
 
     // Dispatch the route based on $_SERVER
@@ -47,6 +34,11 @@ class Router {
         list($con, $method) = explode('@',$callable);
         $con = 'App\Controller\\' . $con;
         $c = new $con();
+        if(method_exists($con, $method)) {
+            echo $method . ' found';
+        } else {
+            echo $method . ' not found';
+        }
         $c->$method();
     }
 }
