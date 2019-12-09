@@ -1,0 +1,17 @@
+{
+    "name": "jimbarrett/starting-point",
+    "description": "my simple starting-point framework",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jim Barrett",
+            "email": "barrettj1971@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+          "App\\":"src/"
+        }
+      }
+}
