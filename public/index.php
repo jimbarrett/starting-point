@@ -3,6 +3,8 @@
 // TODO: set up local/prod environments?
 ini_set('display_errors', 1);
 
+define('TEMPLATE_DIR','../resources/templates');
+
 // autoloader
 require '../vendor/autoload.php';
 
@@ -11,8 +13,6 @@ $router = new App\Router();
 // public routes
 $router->get('/login', 'UsersController@login');
 $router->post('/login', 'UsersController@doLogin');
-
-var_dump($router);
 
 // dispatch route based on server vars
 $router->dispatch($_SERVER);

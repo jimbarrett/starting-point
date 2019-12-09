@@ -2,7 +2,11 @@
 namespace App\Controller;
 
 class Controller {
-	public function __construct() {
-		echo 'main controller<br>';
-	}
+
+	protected $templates;
+
+    public function __construct()
+    {
+        $this->templates = new \League\Plates\Engine(TEMPLATE_DIR);
+    }
 }

@@ -35,10 +35,9 @@ class Router {
         $con = 'App\Controller\\' . $con;
         $c = new $con();
         if(method_exists($con, $method)) {
-            echo $method . ' found';
+            $c->$method();
         } else {
             echo $method . ' not found';
         }
-        $c->$method();
     }
 }
