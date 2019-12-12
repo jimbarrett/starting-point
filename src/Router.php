@@ -37,7 +37,8 @@ class Router {
         if(method_exists($con, $method)) {
             $c->$method();
         } else {
-            echo $method . ' not found';
+            $p = new App\Controller\PagesController();
+            $p->E404();
         }
     }
 }

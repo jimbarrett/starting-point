@@ -3,12 +3,11 @@ namespace App\Controller;
 
 class PagesController extends Controller {
 
-	public function test() {
-		\App\Auth::seeit();
-		echo 'test successful';
+	public function home() {
+		echo $this->templates->render('home');
 	}
 
 	public function E404() {
-		echo 'route incorrect or page not found';
+		echo $this->templates->render('E404');
 	}
 }
